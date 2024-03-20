@@ -1,6 +1,7 @@
 import { CampoTexto } from "./components/CampoTexto";
 import { Card } from "./components/Card";
 import { Estilos } from "./components/EstilosGlobais";
+import { Rodape } from "./components/Footer";
 import { Cabecalho } from "./components/Header";
 import { ProvedorTema } from "./components/ProvedorTema";
 import { Tipografia } from "./components/Tipografia";
@@ -17,6 +18,7 @@ function App() {
         </Tipografia>
         <CampoTexto titulo="Nome Completo" />
       </Card>
+      <Rodape />
     </ProvedorTema>
   );
 }
