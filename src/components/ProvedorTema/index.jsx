@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@emotion/react";
+import React from "react";
 
 const tema= {
   cores: {
@@ -28,6 +29,7 @@ const tema= {
   },
   espacamentos: {
     s: '16px',
+    m: '24px',
     l: '32px'
   },
   fontFamily: "'Montserrat', sans-serif"
