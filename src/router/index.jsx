@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
-import PaginaInicial from "../pages/PaginaInicial";
+// import PaginaInicial from "../pages/PaginaInicial";
+import SelecaoCliente from "../pages/cadastro/SelecaoCliente";
+import LayoutBaseCadastro from "../pages/cadastro/LayoutBaseCadastro";
 
 export const router = createBrowserRouter([
   {
@@ -7,8 +9,12 @@ export const router = createBrowserRouter([
     children: [
       {
         path: 'cadastro',
-        element: <h1>Seleção de tipo de cliente</h1>,
+        element: <LayoutBaseCadastro />,
         children: [
+          {
+            path: '',
+            element: <SelecaoCliente />,
+          },
           {
             path: 'cliente',
             element: <h1>Interesesses</h1>
