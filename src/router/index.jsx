@@ -1,11 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
-// import PaginaInicial from "../pages/PaginaInicial";
 import SelecaoCliente from "../pages/cadastro/SelecaoCliente";
 import LayoutBaseCadastro from "../pages/cadastro/LayoutBaseCadastro";
+import LayoutBase from "../pages/LayoutBase";
 
 export const router = createBrowserRouter([
   {
     path: "/",
+    element: <LayoutBase />,
     children: [
       {
         path: 'cadastro',
