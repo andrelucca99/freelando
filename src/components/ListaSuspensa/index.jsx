@@ -52,7 +52,7 @@ const ListaSuspensaEstilizada = styled.ul`
 `;
 
 const ItemListaSuspensaEstilizado = styled.li`
-  padding: ${({ theme }) => theme.espacamentos.xs} 0;
+  padding: ${({ theme }) => theme.espacamentos.xs};
   text-align: center;
   border-bottom: 1px solid ${({ theme }) => theme.cores.neutras.c};
   cursor: pointer;

@@ -14,11 +14,11 @@ const InputEstilizado = styled.input`
   width: 100%;
   box-sizing: border-box;
   margin-top: ${({theme}) => theme.espacamentos.xs};
-  margin-bottom: ${({theme}) => theme.theme.espacamentos.s};
-  background: ${({theme}) => theme.theme.cores.branco};
+  margin-bottom: ${({theme}) => theme.espacamentos.s};
+  background: ${({theme}) => theme.cores.branco};
   border: 1px solid;
-  border-color: ${({theme}) => theme.theme.cores.neutras.a};
-  border-radius: ${({theme}) => theme.theme.espacamentos.s};
+  border-color: ${({theme}) => theme.cores.neutras.a};
+  border-radius: ${({theme}) => theme.espacamentos.s};
   height: 40px;
   font-weight: 400;
   font-size: 14px;

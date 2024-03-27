@@ -63,7 +63,7 @@ function App() {
           </Row>
         </Container>
       </Cabecalho>
-      <Container style={{ margin: '80px 0' }}>
+      <Container style={{ margin: '80px auto' }}>
         <Row justify="center">
           <Col lg={6} md={8} sm={12}>
             <Card>
