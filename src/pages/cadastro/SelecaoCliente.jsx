@@ -1,10 +1,10 @@
 import { Col, Row } from "react-grid-system";
-import { Tipografia } from "../../components/Tipografia";
 import { Link as RouterLink } from "react-router-dom"
 
-import cliente from './assets/cliente.png';
 import freela from './assets/freela.png';
+import cliente from './assets/cliente.png';
 import { Link } from "../../components/Link";
+import { Tipografia } from "../../components/Tipografia";
 
 const SelecaoCliente = () => {
   return (
@@ -14,7 +14,7 @@ const SelecaoCliente = () => {
 
       <Row>
         <Col md={6} sm={12}>
-          <RouterLink to="/interesses">
+          <RouterLink to="interesses">
             <img src={cliente} alt="Foto de uma pessoa cliente" />
             <Tipografia variante="body" componente="body">Sou cliente e preciso de um freela!</Tipografia>
           </RouterLink>
