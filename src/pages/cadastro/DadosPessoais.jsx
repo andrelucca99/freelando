@@ -5,6 +5,7 @@ import { Botao } from "../../components/Button";
 import HeaderTitle from "../../components/HeaderTitle";
 import { CampoTexto } from "../../components/CampoTexto";
 import { ListaSuspensa } from "../../components/ListaSuspensa";
+import { useCadastroUsuarioContext } from "../../contexto/CadastroUsuario";
 
 const estadosBrasileiros = [
   { "text": "Acre", "value": "AC" },
@@ -37,8 +38,23 @@ const estadosBrasileiros = [
 ]
 
 const DadosPessoais = () => {
+  const {
+    usuario,
+    setNomeCompleto,
+    setCidade,
+    setEmail,
+    setSenha,
+    setSenhaConfirmada,
+    submeterUsuario
+  } = useCadastroUsuarioContext();
+
+  const finalizarCadastro = (e) => {
+    e.preventDefault();
+    submeterUsuario()
+  }
+
   return (
-    <div>
+    <form onSubmit={finalizarCadastro}>
       <HeaderTitle
         title="Crie seu cadastro"
         description="Crie seu perfil gratuitamente para começar a trabalhar com os melhores freelancers. Em seguida, você poderá dar mais detalhes sobre suas demandas e sobre sua forma de trabalho."
@@ -46,7 +62,11 @@ const DadosPessoais = () => {
 
       <Row>
         <Col>
-          <CampoTexto titulo="Nome Completo" />
+          <CampoTexto
+            titulo="Nome Completo"
+            valor={usuario.nomeCompleto}
+            onChange={setNomeCompleto}
+          />
         </Col>
       </Row>
       <Row>
@@ -56,22 +76,38 @@ const DadosPessoais = () => {
       </Row>
       <Row>
         <Col lg={8} md={8} sm={8}>
-          <CampoTexto titulo="Cidade" />
+          <CampoTexto
+            titulo="Cidade"
+            valor={usuario.cidade}
+            onChange={setCidade}
+          />
         </Col>
       </Row>
       <Row>
         <Col>
-          <CampoTexto titulo="Email" />
+          <CampoTexto
+            titulo="Email"
+            valor={usuario.email}
+            onChange={setEmail}
+          />
         </Col>
       </Row>
       <Row>
         <Col lg={6} md={6} sm={6}>
-          <CampoTexto titulo="Senha" />
+          <CampoTexto
+            titulo="Senha"
+            valor={usuario.senha}
+            onChange={setSenha}
+          />
         </Col>
       </Row>
       <Row>
         <Col lg={6} md={6} sm={6}>
-          <CampoTexto titulo="Repita a Senha" />
+          <CampoTexto
+            titulo="Repita a Senha"
+            valor={usuario.senhaConfirmada}
+            onChange={setSenhaConfirmada}
+          />
         </Col>
       </Row>
 
@@ -83,13 +119,11 @@ const DadosPessoais = () => {
         </Col>
         <Col lg={6} md={6} sm={6}>
           <div style={{ textAlign: 'right' }}>
-            <Link to="/cadastro/concluido">
-              <Botao>Próxima</Botao>
-            </Link>
+            <Botao>Próxima</Botao>
           </div>
         </Col>
       </Row>
-    </div>
+    </form>
   )
 }
 

@@ -6,8 +6,11 @@ import cliente from './assets/cliente.png';
 import { Link } from "../../components/Link";
 import HeaderTitle from "../../components/HeaderTitle";
 import { Tipografia } from "../../components/Tipografia";
+import { useCadastroUsuarioContext } from "../../contexto/CadastroUsuario";
 
 const SelecaoCliente = () => {
+  const { setPerfil } = useCadastroUsuarioContext();
+
   return (
     <div style={{ textAlign: 'center' }}>
       <HeaderTitle
@@ -17,7 +20,7 @@ const SelecaoCliente = () => {
 
       <Row>
         <Col md={6} sm={12}>
-          <RouterLink to="interesses">
+          <RouterLink to="interesses" onClick={() => setPerfil('cliente')}>
             <img src={cliente} alt="Foto de uma pessoa cliente" />
             <Tipografia variante="body" componente="body">Sou cliente e preciso de um freela!</Tipografia>
           </RouterLink>

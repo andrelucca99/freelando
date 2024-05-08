@@ -1,10 +1,11 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Col, Row } from "react-grid-system";
 
 import { Botao } from "../../components/Button";
 import HeaderTitle from "../../components/HeaderTitle";
 import GrupoRadio from "../../components/RadioButton/GrupoRadio";
+import { useCadastroUsuarioContext } from "../../contexto/CadastroUsuario";
 
 const opcoes = [
   {
@@ -34,7 +35,15 @@ const opcoes = [
 ]
 
 const Interesses = () => {
-  const [opcao, setOpcao] = useState('');
+  const { usuario, setInteresse, possoSelecionarInteresse } = useCadastroUsuarioContext();
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!possoSelecionarInteresse()) {
+      navigate('/cadastro');
+    }
+  }, [navigate, possoSelecionarInteresse]);
 
   return (
     <div style={{ textAlign: 'center' }}>
@@ -43,7 +52,7 @@ const Interesses = () => {
         subTitle="Qual a área de interesse?"
       />
 
-      <GrupoRadio opcoes={opcoes} valor={opcao} onChange={setOpcao} />
+      <GrupoRadio opcoes={opcoes} valor={usuario.interesse} onChange={setInteresse} />
 
       <Row>
         <Col lg={6} md={6} sm={6}>
