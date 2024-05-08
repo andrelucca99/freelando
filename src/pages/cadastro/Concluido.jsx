@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Col, Row } from "react-grid-system";
 
 import { Botao } from "../../components/Button";
-import { Tipografia } from "../../components/Tipografia";
+import HeaderTitle from "../../components/HeaderTitle";
 import clienteConcluido from './assets/cliente-concluido.png';
 
 const ImagemEstilizada = styled.img`
@@ -14,12 +14,10 @@ const ImagemEstilizada = styled.img`
 const Concluido = () => {
   return (
     <>
-      <div style={{ textAlign: 'center' }}>
-        <Tipografia variante="h1" componente="h1">Seu perfil está completo!</Tipografia>
-        <Tipografia variante="body" componente="body">
-          Agora é só começar a se conectar com os melhores freelancers do mercado!
-        </Tipografia>
-      </div>
+      <HeaderTitle
+        title="Seu perfil está completo!"
+        description="Agora é só começar a se conectar com os melhores freelancers do mercado!"
+      />
 
       <figure>
         <ImagemEstilizada src={clienteConcluido} alt="Foto de uma pessoa cliente" />

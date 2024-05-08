@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Col, Row } from "react-grid-system";
 
 import { Botao } from "../../components/Button";
-import { Tipografia } from "../../components/Tipografia";
+import HeaderTitle from "../../components/HeaderTitle";
 import { CampoTexto } from "../../components/CampoTexto";
 import { ListaSuspensa } from "../../components/ListaSuspensa";
 
@@ -39,12 +39,10 @@ const estadosBrasileiros = [
 const DadosPessoais = () => {
   return (
     <div>
-      <div style={{ textAlign: "center" }}>
-        <Tipografia variante="h1" componente="h1">Crie seu cadastro</Tipografia>
-        <Tipografia variante="body" componente="body">
-          Crie seu perfil gratuitamente para começar a trabalhar com os melhores freelancers. Em seguida, você poderá dar mais detalhes sobre suas demandas e sobre sua forma de trabalho.
-        </Tipografia>
-      </div>
+      <HeaderTitle
+        title="Crie seu cadastro"
+        description="Crie seu perfil gratuitamente para começar a trabalhar com os melhores freelancers. Em seguida, você poderá dar mais detalhes sobre suas demandas e sobre sua forma de trabalho."
+      />
 
       <Row>
         <Col>

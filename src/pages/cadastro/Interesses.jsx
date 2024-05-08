@@ -1,10 +1,10 @@
 import { useState } from "react";
-
-import { Tipografia } from "../../components/Tipografia";
-import GrupoRadio from "../../components/RadioButton/GrupoRadio";
-import { Col, Row } from "react-grid-system";
-import { Botao } from "../../components/Button";
 import { Link } from "react-router-dom";
+import { Col, Row } from "react-grid-system";
+
+import { Botao } from "../../components/Button";
+import HeaderTitle from "../../components/HeaderTitle";
+import GrupoRadio from "../../components/RadioButton/GrupoRadio";
 
 const opcoes = [
   {
@@ -38,8 +38,11 @@ const Interesses = () => {
 
   return (
     <div style={{ textAlign: 'center' }}>
-      <Tipografia variante="h1" componente="h1">Crie seu cadastro</Tipografia>
-      <Tipografia variante="h3" componente="h2">Qual a área de interesse?</Tipografia>
+      <HeaderTitle
+        title="Crie seu cadastro"
+        subTitle="Qual a área de interesse?"
+      />
+
       <GrupoRadio opcoes={opcoes} valor={opcao} onChange={setOpcao} />
 
       <Row>
