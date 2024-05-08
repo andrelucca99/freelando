@@ -44,7 +44,9 @@ const Interesses = () => {
 
       <Row>
         <Col lg={6} md={6} sm={6}>
-          <Botao variante="secundaria">Anterior</Botao>
+          <Link to="/cadastro">
+            <Botao variante="secundaria">Anterior</Botao>
+          </Link>
         </Col>
         <Col lg={6} md={6} sm={6}>
           <div style={{ textAlign: 'right' }}>
