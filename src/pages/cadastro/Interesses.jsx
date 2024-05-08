@@ -40,7 +40,7 @@ const Interesses = () => {
     <div style={{ textAlign: 'center' }}>
       <Tipografia variante="h1" componente="h1">Crie seu cadastro</Tipografia>
       <Tipografia variante="h3" componente="h2">Qual a área de interesse?</Tipografia>
-      <GrupoRadio opcoes={opcoes} valor={opcao} onchange={setOpcao} />
+      <GrupoRadio opcoes={opcoes} valor={opcao} onChange={setOpcao} />
 
       <Row>
         <Col lg={6} md={6} sm={6}>
