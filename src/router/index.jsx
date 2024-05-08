@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import SelecaoCliente from "../pages/cadastro/SelecaoCliente";
 import LayoutBaseCadastro from "../pages/cadastro/LayoutBaseCadastro";
 import LayoutBase from "../pages/LayoutBase";
+import Interesses from "../pages/cadastro/Interesses";
 
 export const router = createBrowserRouter([
   {
@@ -18,7 +19,7 @@ export const router = createBrowserRouter([
           },
           {
             path: 'interesses',
-            element: <h1>Interesesses</h1>
+            element: <Interesses />
           },
           {
             path: 'dados-pessoais',
