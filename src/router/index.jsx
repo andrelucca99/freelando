@@ -5,12 +5,17 @@ import LayoutBase from "../pages/LayoutBase";
 import Interesses from "../pages/cadastro/Interesses";
 import DadosPessoais from "../pages/cadastro/DadosPessoais";
 import Concluido from "../pages/cadastro/Concluido";
+import PaginaInicial from "../pages/PaginaInicial";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <LayoutBase />,
     children: [
+      {
+        path: '',
+        element: <PaginaInicial />,
+      },
       {
         path: 'cadastro',
         element: <LayoutBaseCadastro />,
