@@ -35,6 +35,7 @@ const tema= {
   fontFamily: "'Montserrat', sans-serif"
 }
 
+// eslint-disable-next-line react/prop-types
 export const ProvedorTema = ({ children }) => {
   return <ThemeProvider theme={tema}>{ children }</ThemeProvider>
 }
