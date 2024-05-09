@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+import axios from 'axios';
 import { createContext } from 'react';
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -108,8 +110,11 @@ export const CadastroUsuarioProvider = ({ children }) => {
   }
 
   const submeterUsuario = () => {
-    console.log(usuario);
-    navigate('/cadastro/concluido');
+    axios.post('http://localhost:8080/auth/register', usuario)
+      .then(() => navigate('/cadastro/concluido'))
+      .catch((erro) => {
+        console.error(erro)
+      })
   }
 
   const possoSelecionarInteresse = () => {
