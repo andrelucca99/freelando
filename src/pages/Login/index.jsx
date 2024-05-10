@@ -10,6 +10,7 @@ import { Link } from "../../components/Link"
 import { Tipografia } from "../../components/Tipografia"
 
 import { Logo } from "./Logo";
+import { useSessaoUsuarioContext } from "../../contexto/SessaoUsuario";
 
 const FormEstilizado = styled.form`
     border-bottom: 1px solid;
@@ -21,8 +22,12 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
+  const { login } = useSessaoUsuarioContext();
+
   const efetuarLogin = async (e) => {
     e.preventDefault();
+
+    login(email, senha);
   }
 
   return (
