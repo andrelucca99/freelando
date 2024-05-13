@@ -14,9 +14,11 @@ import { IconeWhatsApp } from "../components/Icones/IconeWhatsApp";
 import { IconeInstagram } from "../components/Icones/IconeInstagram";
 import { ItemListaInline } from "../components/Lista/ItemListaInline";
 
-import { ArmazenadorToken } from "../utils/ArmazenadorToken";
+import { useSessaoUsuarioContext } from "../contexto/SessaoUsuario";
 
 const LayoutBase = ({children}) => {
+  const { usuarioEstaLogado, logout } = useSessaoUsuarioContext();
+
   return (
     <>
       <Cabecalho>
@@ -26,12 +28,14 @@ const LayoutBase = ({children}) => {
               <FreelandoLogo />
             </Col>
             <Col style={{ textAlign: 'right' }}>
-              <RouterLink to="/login">
-                <Link>Login</Link>
-              </RouterLink>
-            </Col>
-            <Col style={{ textAlign: 'right' }}>
-                <Link onClick={() => ArmazenadorToken.efetuarLogout()}>Logout</Link>
+              {
+                usuarioEstaLogado ?
+                  <Link onClick={logout}>Logout</Link>
+                  :
+                  <RouterLink to="/login">
+                    <Link>Login</Link>
+                  </RouterLink>
+              }      
             </Col>
           </Row>
         </Container>
