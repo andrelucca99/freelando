@@ -1,17 +1,20 @@
 /* eslint-disable react/prop-types */
-import { Outlet } from "react-router-dom";
+import { Link as RouterLink, Outlet } from "react-router-dom";
+import { Col, Container, Row } from "react-grid-system";
+
+import { Link } from "../components/Link";
 import { Rodape } from "../components/Footer";
 import { Cabecalho } from "../components/Header";
-import { Col, Container, Row } from "react-grid-system";
-import { FreelandoLogo } from "../components/Icones/FreelandoLogo";
-import { Link } from "../components/Link";
 import { Tipografia } from "../components/Tipografia";
 import { ListaInline } from "../components/Lista/ListaInline";
-import { ItemListaInline } from "../components/Lista/ItemListaInline";
-import { IconeWhatsApp } from "../components/Icones/IconeWhatsApp";
 import { IconeTwitch } from "../components/Icones/IconeTwitch";
-import { IconeInstagram } from "../components/Icones/IconeInstagram";
 import { IconeTwitter } from "../components/Icones/IconeTwitter";
+import { FreelandoLogo } from "../components/Icones/FreelandoLogo";
+import { IconeWhatsApp } from "../components/Icones/IconeWhatsApp";
+import { IconeInstagram } from "../components/Icones/IconeInstagram";
+import { ItemListaInline } from "../components/Lista/ItemListaInline";
+
+import { ArmazenadorToken } from "../utils/ArmazenadorToken";
 
 const LayoutBase = ({children}) => {
   return (
@@ -23,7 +26,12 @@ const LayoutBase = ({children}) => {
               <FreelandoLogo />
             </Col>
             <Col style={{ textAlign: 'right' }}>
-              <Link>Login</Link>
+              <RouterLink to="/login">
+                <Link>Login</Link>
+              </RouterLink>
+            </Col>
+            <Col style={{ textAlign: 'right' }}>
+                <Link onClick={() => ArmazenadorToken.efetuarLogout()}>Logout</Link>
             </Col>
           </Row>
         </Container>
